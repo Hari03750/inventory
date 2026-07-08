@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InventoryHub</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>InventoryHub</h1>
+    <p class="subtitle">Live inventory, backed by the InventoryHub API</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search by name or SKU..."
+        aria-label="Search inventory"
+      />
+
+      <select id="categoryFilter" aria-label="Filter by category">
+        <option value="">All categories</option>
+      </select>
+
+      <select id="sortBy" aria-label="Sort by">
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+        <option value="quantity">Quantity</option>
+      </select>
+
+      <select id="sortDir" aria-label="Sort direction">
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+    </section>
+
+    <section id="statusRegion" class="status" role="status" aria-live="polite"></section>
+
+    <section id="resultsGrid" class="results-grid"></section>
+
+    <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

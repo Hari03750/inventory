@@ -1,0 +1,136 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --border: #2a2f3a;
+  --text: #e8eaed;
+  --muted: #9aa3af;
+  --accent: #4f8cff;
+  --danger: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-header {
+  padding: 24px 32px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+}
+
+.container {
+  padding: 24px 32px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.controls input,
+.controls select {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+#searchInput {
+  flex: 1 1 240px;
+}
+
+.status {
+  min-height: 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.status.error {
+  color: var(--danger);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.item-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.item-card h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.item-card .sku {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.item-card .row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.item-card .low-stock {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.pagination button {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pagination button.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
